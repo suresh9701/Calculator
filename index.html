@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cccc00;
+        }
+        .calculator {
+            max-width: 40%;
+            margin: 0 auto;
+            background-image:url('darklight.jg');
+            padding: 10%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 4%;
+            margin-bottom: 10%;
+			background-color: #ffcc99;
+        }
+        button {
+            width: 75px;
+            height: 70px;
+            margin: 5px;
+            font-size: 90%;
+			background-color:#00ff33;
+        }
+		@media only screen and (max-width: 600px) {
+		  body {
+            font-family: Arial, sans-serif;
+            background-color: #cccc00;
+        }
+        .calculator {
+            max-width: 60%;
+            margin: 100px 0 0 50px;
+            background-color:#0033ff;
+            padding: 10%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 4%;
+            margin-bottom: 10%;
+			background-color: #ffcc99;
+        }
+        button {
+            width: 35px;
+            height: 35px;
+            margin: 5px;
+            font-size: 90%;
+			background-color:#00ff33;
+        }
+		h1{
+           background-color:#ff00cc;
+		    width: 70%;
+		}
+		
+		}
+		
+    </style>
+
+    <script type="text/javascript">
+     var x=prompt("Enter Your Name"," ");
+       alert("Welcome to "+x);	
+   </script>
+</head>
+<body>
+    <div class="calculator">
+	<div>
+             
+		</div>
+        <input type="text" id="result" readonly>
+        <div>
+            <button onclick="appendToResult('1')">1</button>
+            <button onclick="appendToResult('2')">2</button>
+            <button onclick="appendToResult('3')">3</button>
+            <button onclick="appendToResult('+')">+</button>
+        </div>
+        <div>
+            <button onclick="appendToResult('4')">4</button>
+            <button onclick="appendToResult('5')">5</button>
+            <button onclick="appendToResult('6')">6</button>
+            <button onclick="appendToResult('-')">-</button>
+        </div>
+        <div>
+            <button onclick="appendToResult('7')">7</button>
+            <button onclick="appendToResult('8')">8</button>
+            <button onclick="appendToResult('9')">9</button>
+            <button onclick="appendToResult('*')">*</button>
+        </div>
+        <div>
+            <button onclick="appendToResult('0')">0</button>
+            <button onclick="clearResult()">C</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="appendToResult('/')">/</button>
+        </div>
+		</br></br></br></br></br>
+		<footer align='right';>Designed by V H Suresh</footer>
+    </div>
+    <script>
+        function appendToResult(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+
+        function calculateResult() {
+            try {
+                const expression = document.getElementById('result').value;
+                const result = eval(expression);
+                document.getElementById('result').value = result;
+            } catch (error) {
+                document.getElementById('result').value = 'Error';
+            }
+        }
+    </script>
+	
+</body>
+</html>
